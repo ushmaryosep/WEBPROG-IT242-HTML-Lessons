@@ -1,48 +1,146 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/flexbox.css?version=0.1">
-<title>WEBPROG IT242 INTRODUCTION Joshmar Clavero</title>
+<title>Joshmar's Personal Profile Web page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Header */
+header {
+  padding: 60px;
+  text-align: center;
+  background: #1B3C53;
+  color: white;
+}
+
+/* Top navigation bar */
+.navbar {
+  display: flex;
+  background-color: #234C6A;
+}
+
+/* Navigation bar links */
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #D2C1B6;
+  color: black;
+}
+
+/* Column container */
+.container {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #D2C1B6;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: rgb(247, 247, 247);
+  padding: 20px;
+}
+
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #D2C1B6;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .container, .navbar {   
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 <body>
- 
-<h1>Personal Profile Web page </h1>
-<p>
- 
-About Me<br>
-( Do not include birthdate / age / contact information)<br>
-Education / Achievements<br>
- STEM - HSL- Braille College, Inc. 2024<br>
- BSIT - Asia Pacific College 2028<br>
-Course <br>
- Bachelor of Science in Information Technology<br>
-IT Experience<br>
- Beginner at Java, Python, HTML, CSS, MySQL, OutSystems, Figma, and Linux<br>
-Hobbies & Interests<br>
- Riding Motorcycles and Cars<br>
- Watching Animes and Reading Manga/Manhwa/Mahua<br>
- Watching Movies/Documentaries<br>
- Working Out<br>
-Goals In Life / Dream<br>
- To be financially stable within the next 10-15 years.<br>
- Retire my parents.<br>
-Picture Gallery<br>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYwQdjtQ6MtVdwp9wDc_wM0cSSgz7th81LcpZ_rFZTZi-YS4lb_Ch5Kn8XF18_FqNwNw&usqp=CAU" alt="My Picture" width="500" height="600">
-</p>
- 
 
-<div class="container">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>  
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>  
-  <div>7</div>
-  <div>8</div>
-  <div>9</div>  
+<!-- Note -->
+<div style="background:#1B3C53;padding:5px;text-align:center;">
+  <h4>WEBPROG IT242 FEATURE/CSS - FLEXBOX</h4>
 </div>
- 
-  
+
+<!-- Header -->
+<header>
+  <h1>Joshmar's Personal Profile Web page</h1>
+  <p>November <b>25</b>, 2025</p>
+</header>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+
+<!-- Content Container -->
+<div class="container">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="https://asiapacificcollege-my.sharepoint.com/:i:/g/personal/jlclavero_student_apc_edu_ph/IQD3jw0ERHeWT4I9rY-bZ1FoAe4iKy1bsl_biupXWkk3HuE?e=sGCVjq" style="height:200px;">Image</div>
+    <p>Education / Achievements<br>
+    STEM - HSL- Braille College, Inc. 2024
+    BSIT - Asia Pacific College 2028</p>
+    <h3>Hobbies and Interests</h3>
+    <p>These are my not so unique hobbies.
+    Riding Motorcycles and Cars
+    Watching Animes and Reading Manga/Manhwa/Mahua
+    Watching Movies/Documentaries
+    Working Out
+    </p>
+    <div class="https://asiapacificcollege-my.sharepoint.com/:i:/g/personal/jlclavero_student_apc_edu_ph/IQDFmccwaOqqTbfL9BV4bSLIAVn6s9thtZ11LMtMv4eba7A?e=rCcp4k" style="height:60px;">Image</div><br>
+    <div class="https://asiapacificcollege-my.sharepoint.com/:i:/g/personal/jlclavero_student_apc_edu_ph/IQBZc061cqW-TY0DP0ZxADp8AfFGxdPvV7dF_cMn5m5hGPI?e=6q10uz" style="height:60px;">Image</div><br>
+    <div class="https://asiapacificcollege-my.sharepoint.com/:i:/g/personal/jlclavero_student_apc_edu_ph/IQC7l5aNCvJURJCtqU-W9DVOAYqpFoLHpBs_6tLiJT0NPN4?e=2wxNFE" style="height:60px;">Image</div>
+  </div>
+  <div class="main">
+    <h2>GOALS IN LIFE</h2>
+    <h5>These are my aspirations and target goal after i graduate.</h5>
+    <div class="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjboajL2yAr3896YXvSHtFWjsIXd9IXO3Tw&s" style="height:200px;">Image</div>
+    <p>To be financially stable within the next 10-15 years.</p>
+    <p>I also plan to retire my parents when they hit their 60s.</p>
+    <br>
+    <h2>MORE IMAGES</h2>
+    <h5>For additional information and images about me.</h5>
+    <div class="https://asiapacificcollege-my.sharepoint.com/:i:/g/personal/jlclavero_student_apc_edu_ph/IQCDqumSYbkIQKfs1_ZP9qHbAfW6EamDC42u0larUATzLig?e=xWOnRT" style="height:200px;">Image</div>
+    <p>Listed below are my course and my curent It experiences as of the moment: </p>
+    <p>Course: Bachelor of Science in Information Technology
+        IT Experience: Beginner at Java, Python, HTML, CSS, MySQL, OutSystems, Figma, and Linux</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <h2>Footer</h2>
+</footer>
+
 </body>
 </html>
+
+
