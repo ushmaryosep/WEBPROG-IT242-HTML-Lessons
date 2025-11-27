@@ -71,12 +71,14 @@ header {
   border-radius: 5px;
 }
 
-/* Specific hobby images */
+/* Hobby images - banner style */
 .hobby-img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  margin-bottom: 10px;
+  width: 100%;          /* full width of side column */
+  max-width: 250px;     /* optional limit */
+  height: 100px;        /* banner-like height */
+  object-fit: cover;    /* crop/fit nicely */
+  margin-bottom: 15px;  /* spacing */
+  border-radius: 5px;   /* rounded corners */
 }
 
 /* Footer */
@@ -86,14 +88,14 @@ footer {
   background: #ffffff;
 }
 
-/* Responsive layout - stack columns on small screens */
+/* Responsive layout */
 @media screen and (max-width: 700px) {
   .container, .navbar {   
     flex-direction: column;
   }
   .hobby-img {
-    width: 50px;
-    height: 50px;
+    width: 80%;     /* shrink on mobile */
+    height: 80px;
   }
 }
 </style>
@@ -124,7 +126,7 @@ footer {
 
     <h3>Hobbies and Interests</h3>
     <p>These are my not-so-unique hobbies:</p>
-    <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/feature/css-flexbox/image_2025-11-28_004539068.png" alt="Anime" class="hobby-img">
+    <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/feature/css-flexbox/ANIME.png" alt="Anime" class="hobby-img">
     <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/feature/css-flexbox/CARS.png" alt="Cars" class="hobby-img">
     <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/feature/css-flexbox/GYM.png" alt="Gym" class="hobby-img">
   </div>
