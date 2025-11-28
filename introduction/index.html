@@ -1,45 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="css/css-grid.css?version0.1">
-<title>WEBPROG IT242 INTRODUCTION Joshmar Clavero</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBPROG IT242 FEATURE/CSS - GRID</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #6badeb;
+            margin-top: 30px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "menu content"
+                "footer footer";
+            grid-template-columns: 1fr 3fr;
+            gap: 10px;
+            padding: 20px;
+            background-color: #01285a;
+            max-width: 1100px;
+            margin: 0 auto;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .container div {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container div.header {
+            grid-area: header;
+            text-align: center;
+            background-color: #6badeb;
+            color: white;
+        }
+
+        .container div.header h2 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .container div.menu {
+            grid-area: menu;
+            background-color: #91bee9;
+        }
+
+        .container div.menu a {
+            color: #6badeb;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .container div.menu a:hover {
+            color: #fff;
+            background-color: #6badeb;
+            padding: 5px;
+        }
+
+        .container div.content {
+            grid-area: content;
+            background-color: #f8f8f8;
+        }
+
+        .container div.content h3 {
+            font-size: 28px;
+            color: #6badeb;
+        }
+
+        .container div.content p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container div.footer {
+            grid-area: footer;
+            background-color: #0e61a5;
+            color: white;
+            text-align: center;
+        }
+
+        .container div.footer h4 {
+            font-size: 18px;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
- 
-<h1>Personal Profile Web page </h1>
-<p>
- 
-About Me<br>
-( Do not include birthdate / age / contact information)<br>
-Education / Achievements<br>
- STEM - HSL- Braille College, Inc. 2024<br>
- BSIT - Asia Pacific College 2028<br>
-Course <br>
- Bachelor of Science in Information Technology<br>
-IT Experience<br>
- Beginner at Java, Python, HTML, CSS, MySQL, OutSystems, Figma, and Linux<br>
-Hobbies & Interests<br>
- Riding Motorcycles and Cars<br>
- Watching Animes and Reading Manga/Manhwa/Mahua<br>
- Watching Movies/Documentaries<br>
- Working Out<br>
-Goals In Life / Dream<br>
- To be financially stable within the next 10-15 years.<br>
- Retire my parents.<br>
-Picture Gallery<br>
 
-<img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/css-flexbox/image_2025-11-28_004321158.png" alt="My Picture" width="500" height="600">
-</p>
- 
- <div class="container">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>  
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>  
-</div>
+    <h1>WEBPROG IT242 FEATURE/CSS - GRID</h1>
 
-  
+    <div class="container">
+        <div class="header">
+            <h2>Joshmar's Personal Profile Web Page</h2>
+        </div>
+
+        <div class="menu">
+            <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/feature/css-flexbox/image_2025-11-28_004321158.png" alt="My Picture" style="height:400px;">
+        </div>
+
+        <div class="content">
+            <h3>About Me</h3>
+            <p>About Me:
+			My name is Joshmar Limocon Clavero and I'm currently studying STEM at HSL-Braille College (graduating 2024) and pursuing a BSIT at Asia Pacific College (graduating 2028).</p>
+            
+			<p>IT Experience:
+			I’m a beginner in Java, Python, HTML, CSS, MySQL, OutSystems, Figma, and Linux.</p>
+
+			<p>Hobbies & Interests:
+			I enjoy riding motorcycles and cars, watching anime, reading manga/manhwa, and working out.</p>
+
+			<p>Goals:
+			I aim to be financially stable within 10-15 years and retire my parents.</p>
+        </div>
+
+        <div class="footer">
+            <h4>WEBPROG IS THE BEST!</h4>
+        </div>
+    </div>
+
 </body>
 </html>
