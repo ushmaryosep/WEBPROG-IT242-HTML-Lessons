@@ -2,71 +2,144 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/rwd.css">
-<title>WEBPROG IT242 INTRODUCTION Joshmar Clavero</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  background: linear-gradient(135deg, #f7e7ff, #d6e6ff);
+  line-height: 1.6;
+  padding: 10px;
+}
+
+/* GRID */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'facts'
+    'footer';
+  gap: 15px;
+}
+
+/* HEADER */
+.header {
+  grid-area: header;
+  text-align: center;
+  color: white;
+  padding: 20px 10px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #6A5ACD, #836FFF);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+  font-size: 38px;
+  letter-spacing: 1px;
+}
+
+/* MAIN CONTENT */
+.content {
+  grid-area: main;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.content > h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #3b3b3b;
+}
+
+.content p {
+  margin-bottom: 12px;
+  color: #505050;
+}
+
+/* FACTS / PICTURE */
+.facts {
+  grid-area: facts;
+  background: #ffb36b;
+  background: linear-gradient(135deg, #ff9f5c, #ff7b5c);
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.facts h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.facts img {
+  height: 140px;
+  border-radius: 10px;
+  border: 3px solid rgba(255,255,255,0.7);
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  background: #323232;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (min-width: 700px) {
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .header { grid-area: 1 / 1 / span 1 / span 6; }
+  .content { grid-area: 2 / 2 / span 1 / span 4; }
+  .facts   { grid-area: 2 / 1 / span 1 / span 1; }
+  .footer  { grid-area: 3 / 1 / span 1 / span 6; }
+}
+</style>
 </head>
+
 <body>
- 
-<h1>Personal Profile Web page </h1>
-<p>
- 
-About Me<br>
-( Do not include birthdate / age / contact information)<br>
-Education / Achievements<br>
- STEM - HSL- Braille College, Inc. 2024<br>
- BSIT - Asia Pacific College 2028<br>
-Course <br>
- Bachelor of Science in Information Technology<br>
-IT Experience<br>
- Beginner at Java, Python, HTML, CSS, MySQL, OutSystems, Figma, and Linux<br>
-Hobbies & Interests<br>
- Riding Motorcycles and Cars<br>
- Watching Animes and Reading Manga/Manhwa/Mahua<br>
- Watching Movies/Documentaries<br>
- Working Out<br>
-Goals In Life / Dream<br>
- To be financially stable within the next 10-15 years.<br>
- Retire my parents.<br>
-Picture Gallery<br>
-<img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/css-flexbox/IMAGES%20OF%20ME.png" alt="My Picture" width="1000" height="600">
-</p>
- 
 
 <div class="grid-container">
 
-    <div class="header"><h1>Chania</h1>
+  <div class="header">
+    <h1>My Personal Profile Web Page</h1>
+  </div>
+
+  <div class="content">
+    <h1>JOSHMAR CLAVERO</h1>
+    <p><b><i>CURRENTLY A SECOND YEAR STUDENT OF ASIA PACIFIC COLLEGE</i></b></p>
+    <p><b>Education / Achievements:</b><br>
+       STEM - HSL Braille College, Inc. 2024<br>
+       BSIT - Asia Pacific College 2028
+    </p>
+    <p><i>Currently learning a lot about web and mobile programming.</i></p>
+    <p><i>My hobbies are cars, motorcycles, movies, anime, and eating.</i></p>
+  </div>
+
+  <div class="facts">
+    <h2>My Picture</h2>
+    <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/css-flexbox/IMAGES%20OF%20ME.png" alt="My Photo">
+  </div>
+
+  <div class="footer">
+    <p><b>WEBPROG IT242</b></p>
+  </div>
+
 </div>
 
-<div class="menu">
-  <ul>
-    <li>The Flight</li>
-    <li>The City</li>
-    <li>The Island</li>
-    <li>The Food</li>
-  </ul>
-</div>
-
-<div class="content">
-  <h1>The City</h1>
-  <p>Chania is the capital of the Chania region on the island of Crete.</p>
-  <p>The city can be divided in two parts, the old town and the modern city. The old town is situated next to the old harbour and is the matrix around which the whole urban area was developed.</p>
-  <p>Chania lies along the north west coast of the island Crete.</p>
-</div>  
-
-<div class="facts">
-  <h2>Facts:</h2>
-  <ul>
-    <li>Chania is a city on the island of Crete</li>
-    <li>Crete is a Greek island in the Mediterranean Sea</li>
-  </ul>
-</div>
-
-<div class="footer"><p>Resize the browser window to see the responsive effect.</p></div>
-  
-</div>
-
-
-
-  
 </body>
 </html>
