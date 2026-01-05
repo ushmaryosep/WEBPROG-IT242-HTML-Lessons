@@ -1,104 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Joshmar Clavero&Khalil Galido - Personal Profile</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap5.css">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Josh | Personal Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --gray: #6b7280;
+  --teal: #14b8a6;
+  --light-gray: #f9fafb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---------------- NAVBAR ---------------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.logo span {
+  color: var(--teal);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+nav ul li a {
+  color: var(--gray);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: var(--teal);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: var(--text);
+}
+
+.cta {
+  background: var(--teal);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(20,184,166,0.35);
+}
+
+/* ---------------- SECTIONS ---------------- */
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.badge {
+  width: fit-content;
+  padding: 6px 16px;
+  border: 1px solid var(--teal);
+  border-radius: 999px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  animation: slideUp 1.2s ease forwards;
+}
+
+.hero p {
+  color: var(--gray);
+  max-width: 600px;
+  animation: slideUp 1.4s ease forwards;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary,
+.btn-outline {
+  padding: 12px 28px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(20,184,166,0.4);
+}
+
+.btn-outline {
+  border: 1px solid #ccc;
+}
+
+.btn-outline:hover {
+  background: var(--text);
+  color: white;
+}
+
+/* ---------------- GRID & CARDS ---------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px) rotateX(6deg);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.card i {
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+
+/* ---------------- ABOUT ---------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.two-col img {
+  width: 100%;
+  border-radius: 24px;
+  transition: transform 0.6s ease;
+}
+
+.two-col img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------------- GALLERY ---------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  background: var(--light-gray);
+  padding: 80px 20px;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    display: none;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">WEBPROG IT242: BOOTSTRAP5</a>
-    </div>
-  </nav>
-
-  <div class="header-section">
-    <h1>Joshmar Clavero AND KHALIL!</h1>
-    <p>Explore my personal profile and get to know me better!</p>
+<header>
+  <div class="nav">
+    <div class="logo">Josh<span>.</span></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#goals">Goals</a></li>
+      </ul>
+    </nav>
+    <a href="#footer" class="cta">Contact Me</a>
   </div>
+</header>
 
-  <div class="about-me-container">
-    <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/css-flexbox/IMAGES%20OF%20ME.png" alt="Joshmar's Image">
-    <h3>About Me</h3>
-    <p>
-      Hi, I'm Joshmar! I'm passionate about technology, programming, and creative problem-solving. I enjoy exploring
-      new trends in web development, learning about AI, and creating projects that combine both functionality and
-      design. Beyond coding, I love anime, working out, and cars, which all inspire me to balance productivity and
-      creativity in my daily life. Feel free to connect and explore my work and hobbies!
-    </p>
-
-    <h5>Quick Links</h5>
-    <ul class="list-group">
-      <li class="list-group-item"><a href="https://www.linkedin.com/in/joshmar-clavero-8b1912322/" target="_blank">LinkedIn</a></li>
-      <li class="list-group-item"><a href="https://github.com/ushmaryosep" target="_blank">GitHub</a></li>
-    </ul>
+<section class="hero show">
+  <span class="badge">IT Student • Aspiring Developer</span>
+  <h1>Building My Path in Technology & Creativity</h1>
+  <p>
+    I am a first-year IT student passionate about learning, creating,
+    and improving my skills in technology and design.
+  </p>
+  <div class="buttons">
+    <a href="#about" class="btn-primary">View Profile</a>
+    <a href="#" class="btn-outline">Download CV</a>
   </div>
+</section>
 
-  <div class="card card-custom">
-    <div class="card-body">
-      <h2 class="card-title">College 2024-2028</h2>
-      <h5 class="card-text">Asia Pacific College</h5>
-      <p class="card-text">
-        Bachelor of Science in Information Technology at Asia Pacific College, Makati City. During my college years, I
-        plan to deepen my skills in software development, networking, and IT project management, preparing for a career
-        in the ever-evolving tech industry.
+<section id="about">
+  <div class="two-col">
+    <div>
+      <h2>About Me</h2>
+      <p>
+        I am a motivated student exploring Information Technology.
+        I enjoy building projects, learning new tools, and growing
+        through experience.
       </p>
-      <p class="card-text"><strong>Address:</strong> 3 Humabon, Makati, 1232 Kalakhang Maynila</p>
-      <img src="https://www.jslaarchitects.com/wp-content/uploads/2019/07/Group-44.jpg" alt="Asia Pacific College" style="width:100%; height:auto; border-radius:10px; margin-top:15px;">
+    </div>
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education & Achievements</h2>
+  <div class="grid">
+    <div class="card">
+      <i data-lucide="graduation-cap"></i>
+      <h3>College</h3>
+      <p>Bachelor of Science in Information Technology</p>
+    </div>
+    <div class="card">
+      <i data-lucide="award"></i>
+      <h3>Achievements</h3>
+      <p>Academic projects and certifications</p>
     </div>
   </div>
+</section>
 
-  <div class="card card-custom">
-    <div class="card-body">
-      <h2 class="card-title">Junior and Senior High School 2018-2024</h2>
-      <h5 class="card-text">HSL- Braille College, Inc.</h5>
-      <p class="card-text">
-        Completed my Junior and Senior High School education with STEM Strand. Achieved Second Honorable Mention while
-        developing strong foundational knowledge in science, technology, and critical thinking skills.
-      </p>
-      <p class="card-text"><strong>Address:</strong> 26C Durian Ext. Pag-Asa Ave. Bgy. Katuparan, Taguig City</p>
-      <img src="https://hslbc-ienroll-bucket-storage.s3.amazonaws.com/static/img/hslbc-seo-image.png" alt="HSL Braille College" style="width:100%; height:auto; border-radius:10px; margin-top:15px;">
+<section id="experience">
+  <h2>Course & IT Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <i data-lucide="code"></i>
+      <h3>Programming</h3>
+      <p>HTML, CSS, JavaScript</p>
+    </div>
+    <div class="card">
+      <i data-lucide="laptop"></i>
+      <h3>Tools</h3>
+      <p>VS Code, Git, UI tools</p>
     </div>
   </div>
+</section>
 
-<div class="hobbies-section">
-  <h2>My Hobbies</h2>
-  <div id="demo" class="carousel slide" data-bs-ride="carousel">
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-    </div>
-
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/css-flexbox/ANIME.png" alt="Anime" class="d-block w-100">
-      </div>
-      <div class="carousel-item">
-        <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/css-flexbox/GYM.png" alt="Gym" class="d-block w-100">
-      </div>
-      <div class="carousel-item">
-        <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/css-flexbox/CARS.png" alt="Cars" class="d-block w-100">
-      </div>
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+<section id="gallery">
+  <h2>Picture Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
   </div>
-</div>
+</section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<section id="goals">
+  <h2>Goals in Life</h2>
+  <p>
+    My goal is to become a skilled IT professional who creates meaningful
+    solutions and continuously improves.
+  </p>
+</section>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>Technologies Used</h4>
+      <p>HTML, CSS, JavaScript</p>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <p>Unsplash, Lucide Icons</p>
+    </div>
+    <div>
+      <h4>© 2026 Josh</h4>
+      <p>Personal Profile Website</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
 </body>
-
 </html>
