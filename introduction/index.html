@@ -1,313 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Josh | Personal Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Josh | Personal Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --teal:#14b8a6;
-  --dark:#0f172a;
-  --gray:#6b7280;
-  --light:#f8fafc;
-}
+  <style>
+    :root {
+      --header: #1E293B;
+      --main-bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --accent: #2DD4BF;
+      --text-main: #0F172A;
+      --text-sub: #475569;
+      --footer: #064E3B;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-html{scroll-behavior:smooth;}
-body{background:#fff;color:var(--dark);}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-/* NAV */
-header{
-  position:fixed;top:0;width:100%;background:white;
-  border-bottom:1px solid #eee;z-index:1000;
-}
-.nav{
-  max-width:1200px;margin:auto;padding:16px 20px;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.logo{font-weight:700;font-size:1.2rem;}
-.logo span{color:var(--teal);}
-nav ul{display:flex;gap:22px;list-style:none;}
-nav a{color:var(--gray);font-size:.95rem;}
-nav a:hover{color:var(--dark);}
+    body {
+      background: var(--main-bg);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
 
-/* HERO */
-.hero{
-  padding-top:140px;padding-bottom:100px;
-  background:linear-gradient(120deg,#ecfeff,white);
-}
-.hero-inner{
-  max-width:1200px;margin:auto;padding:0 20px;
-  display:grid;grid-template-columns:1.2fr 1fr;
-  gap:60px;align-items:center;
-}
-.hero h1{font-size:clamp(2.6rem,5vw,3.8rem);}
-.hero h1 span{color:var(--teal);}
-.hero p{color:var(--gray);margin:20px 0;max-width:520px;}
-.hero-btn{
-  display:inline-block;background:var(--teal);color:white;
-  padding:14px 32px;border-radius:999px;
-  transition:.3s;
-}
-.hero-btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 35px rgba(20,184,166,.4);
-}
-.profile-card{
-  background:white;padding:30px;border-radius:24px;
-  box-shadow:0 35px 70px rgba(0,0,0,.15);
-  text-align:center;animation:float 4s ease-in-out infinite;
-}
-.profile-card img{
-  width:100%;border-radius:18px;margin-bottom:16px;
-}
-@keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-14px);}
-}
+    /* HEADER */
+    header {
+      background: var(--header);
+      color: white;
+      padding: 1.2rem 4rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* GENERAL SECTION */
-section{padding:100px 20px;}
-.container{max-width:1200px;margin:auto;}
-.section-title{text-align:center;margin-bottom:60px;}
-.section-title h2{font-size:2.2rem;}
-.section-title p{color:var(--gray);margin-top:8px;}
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
 
-/* ABOUT */
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:50px;
-  align-items:center;
-}
-.about-grid img{
-  width:100%;border-radius:22px;
-  transition:.6s;
-}
-.about-grid img:hover{transform:scale(1.05);}
-.about-text p{color:var(--gray);margin-bottom:14px;}
+    nav a {
+      color: #CBD5E1;
+      margin-left: 2rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-/* EDUCATION */
-.timeline{
-  border-left:3px solid var(--teal);
-  padding-left:30px;
-}
-.timeline-item{
-  margin-bottom:40px;position:relative;
-}
-.timeline-item::before{
-  content:"";position:absolute;left:-13px;top:4px;
-  width:18px;height:18px;background:var(--teal);
-  border-radius:50%;
-}
-.timeline-item h3{margin-bottom:6px;}
-.timeline-item span{font-size:.9rem;color:var(--gray);}
+    nav a:hover {
+      color: var(--accent);
+    }
 
-/* HOBBIES */
-.hobbies{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:30px;
-}
-.hobby{
-  background:white;padding:30px;border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
-  text-align:center;transition:.4s;
-}
-.hobby:hover{
-  background:var(--teal);color:white;
-  transform:translateY(-12px);
-}
-.hobby i{color:var(--teal);margin-bottom:14px;}
-.hobby:hover i{color:white;}
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #0F172A, #1E293B);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
 
-/* GOALS */
-.goals{
-  background:var(--dark);color:white;
-}
-.goal-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-.goal{
-  background:#020617;padding:30px;border-radius:20px;
-}
-.goal h3{color:var(--teal);margin-bottom:10px;}
+    .hero h2 {
+      font-size: 3rem;
+      animation: fadeUp 1.2s ease forwards;
+    }
 
-/* GALLERY */
-.gallery{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-}
-.gallery img{
-  width:100%;border-radius:22px;
-  transition:.6s;
-}
-.gallery img:hover{
-  transform:scale(1.1);
-  box-shadow:0 30px 60px rgba(0,0,0,.25);
-}
+    .hero p {
+      max-width: 650px;
+      margin: 1.5rem auto;
+      color: #CBD5E1;
+    }
 
-/* FOOTER */
-footer{
-  background:#020617;color:white;padding:60px 20px;
-  text-align:center;
-}
+    .hero button {
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      border: none;
+      background: var(--accent);
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .hero-inner,.about-grid{grid-template-columns:1fr;text-align:center;}
-}
-</style>
+    .hero button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* SECTION */
+    section {
+      padding: 6rem 4rem;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    section h3::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      display: block;
+      margin-top: 10px;
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 900px;
+      line-height: 1.8;
+      color: var(--text-sub);
+    }
+
+    /* EDUCATION */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .edu-card {
+      display: flex;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .edu-card:hover {
+      transform: translateX(10px);
+    }
+
+    .edu-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 1.5rem;
+    }
+
+    /* HOBBIES */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .hobby-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.4s;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .hobby-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .hobby-card div {
+      padding: 1.2rem;
+    }
+
+    /* GOALS */
+    .goals {
+      background: #E2E8F0;
+      border-radius: 20px;
+      padding: 3rem;
+    }
+
+    .goal {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--footer);
+      color: #D1FAE5;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header { padding: 1rem 2rem; }
+      section { padding: 4rem 2rem; }
+      .hero h2 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">Josh<span>.</span></div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#goals">Goals</a></li>
-      </ul>
-    </nav>
-  </div>
+  <h1>Josh</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#goals">Goals</a>
+  </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div>
-      <h1>Hello, I’m <span>Josh</span></h1>
-      <p>
-        A first-year BS Information Technology student passionate about
-        technology, creativity, and continuous self-improvement.
-      </p>
-      <a href="#about" class="hero-btn">Know More About Me</a>
-    </div>
-    <div class="profile-card">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
-      <h3>BS Information Technology</h3>
-      <p>Aspiring IT Professional</p>
-    </div>
+<div class="hero">
+  <div>
+    <h2>Building My Future Through Technology</h2>
+    <p>A BSIT student passionate about growth, creativity, and becoming financially free while creating meaningful connections.</p>
+    <button>Explore My Story</button>
   </div>
-</section>
+</div>
 
 <section id="about">
-  <div class="container">
-    <div class="section-title">
-      <h2>About Me</h2>
-      <p>Who I am and what drives me</p>
-    </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          I am a motivated college student currently pursuing a Bachelor of
-          Science in Information Technology. I enjoy learning how technology
-          shapes the modern world and how it can be used to solve real-life problems.
-        </p>
-        <p>
-          I am particularly interested in web development, design, and
-          continuously improving my technical and creative skills.
-        </p>
-      </div>
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
-    </div>
-  </div>
+  <h3>About Me</h3>
+  <p class="about">
+    I am a Bachelor of Science in Information Technology student at Asia Pacific College.
+    I enjoy learning new technologies, improving myself physically and mentally,
+    and exploring different industries while preparing for a stable and successful future.
+  </p>
 </section>
 
 <section id="education">
-  <div class="container">
-    <div class="section-title">
-      <h2>Education & Achievements</h2>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Bachelor of Science in Information Technology</h3>
-        <span>2024 – Present</span>
-        <p>Studying programming, databases, and system fundamentals.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>Academic Projects</h3>
-        <span>College Level</span>
-        <p>Completed multiple academic projects involving HTML, CSS, and JavaScript.</p>
-      </div>
-    </div>
+  <h3>Education</h3>
+  <div class="timeline">
+    <div class="edu-card"><div class="edu-logo"></div>2010–2017 | Elementary – HSL Braille College, Inc.</div>
+    <div class="edu-card"><div class="edu-logo"></div>2018–2022 | Junior High – HSL Braille College, Inc.</div>
+    <div class="edu-card"><div class="edu-logo"></div>2022–2024 | Senior High (STEM) – HSL Braille College, Inc.</div>
+    <div class="edu-card"><div class="edu-logo"></div>2024–2028 | College – Asia Pacific College (BSIT)</div>
   </div>
 </section>
 
 <section id="hobbies">
-  <div class="container">
-    <div class="section-title">
-      <h2>Hobbies & Interests</h2>
+  <h3>Hobbies & Interests</h3>
+  <div class="hobbies-grid">
+    <div class="hobby-card">
+      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07c" />
+      <div>Going to the gym helps me build discipline and mental strength.</div>
     </div>
-    <div class="hobbies">
-      <div class="hobby">
-        <i data-lucide="code"></i>
-        <h3>Coding</h3>
-        <p>Building and experimenting with websites and apps.</p>
-      </div>
-      <div class="hobby">
-        <i data-lucide="palette"></i>
-        <h3>Design</h3>
-        <p>Exploring UI/UX and visual creativity.</p>
-      </div>
-      <div class="hobby">
-        <i data-lucide="gamepad-2"></i>
-        <h3>Games & Media</h3>
-        <p>Enjoying games and digital content for inspiration.</p>
-      </div>
+    <div class="hobby-card">
+      <img src="https://images.unsplash.com/photo-1606112219348-204d7d8b94ee" />
+      <div>Watching anime inspires creativity and storytelling.</div>
     </div>
-  </div>
-</section>
-
-<section id="gallery">
-  <div class="container">
-    <div class="section-title">
-      <h2>Picture Gallery</h2>
+    <div class="hobby-card">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" />
+      <div>Riding motorcycles gives freedom and focus.</div>
     </div>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    <div class="hobby-card">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" />
+      <div>Driving cars helps me relax and explore.</div>
+    </div>
+    <div class="hobby-card">
+      <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4" />
+      <div>Watching movies allows me to appreciate art and emotions.</div>
+    </div>
+    <div class="hobby-card">
+      <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420" />
+      <div>Playing games improves strategy and teamwork.</div>
     </div>
   </div>
 </section>
 
-<section id="goals" class="goals">
-  <div class="container">
-    <div class="section-title">
-      <h2>Goals in Life</h2>
-      <p>What I aim to achieve</p>
+<section id="goals">
+  <h3>Goals in Life</h3>
+  <div class="goals">
+    <div class="goal">
+      <strong>Financial Freedom by 30:</strong>
+      My goal is to achieve financial stability where money is no longer a constant worry,
+      allowing me to focus on growth and fulfillment.
     </div>
-    <div class="goal-grid">
-      <div class="goal">
-        <h3>Career Growth</h3>
-        <p>To become a skilled IT professional contributing to meaningful projects.</p>
-      </div>
-      <div class="goal">
-        <h3>Continuous Learning</h3>
-        <p>To constantly learn new technologies and improve my skills.</p>
-      </div>
-      <div class="goal">
-        <h3>Personal Development</h3>
-        <p>To grow as a responsible and creative individual.</p>
-      </div>
+    <div class="goal">
+      <strong>Retire My Parents Early:</strong>
+      I want to give back to my parents by ensuring they live comfortably before their 60s.
+    </div>
+    <div class="goal">
+      <strong>Build Strong Industry Connections:</strong>
+      Establishing meaningful relationships across different industries to open opportunities and collaboration.
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Josh • HTML, CSS & JavaScript Personal Portfolio</p>
+  © 2026 Josh • Resources Used: Unsplash, Google Fonts
 </footer>
-
-<script>
-lucide.createIcons();
-</script>
 
 </body>
 </html>
