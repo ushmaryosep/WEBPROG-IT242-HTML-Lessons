@@ -1,263 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Joshmar L. Clavero | Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Joshmar L. Clavero | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-<style>
-:root{
-  --c1:#005461;
-  --c2:#018790;
-  --c3:#00B7B5;
-  --c4:#F4F4F4;
-}
+  <style>
+    :root {
+      --navy: #0f172a;
+      --teal: #14b8a6;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --dark: #020617;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,sans-serif}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
 
-body{
-  background:var(--c4);
-  color:#022;
-  overflow-x:hidden;
-}
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-section{
-  padding:70px 8%;
-}
+    section {
+      padding: 70px 8%;
+    }
 
-/* ================= HERO ================= */
-header{
-  background:linear-gradient(135deg,var(--c1),var(--c2));
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  align-items:center;
-  gap:40px;
-  color:white;
-  padding:0 8%;
-}
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-align: center; /* ✅ CENTER TITLES */
+    }
 
-.hero-text h1{
-  font-size:3.6rem;
-  line-height:1.05;
-}
-.hero-text span{color:var(--c3)}
+    /* ================= HEADER ================= */
+    header {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: white;
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      padding: 0 8%;
+      gap: 40px;
+    }
 
-.hero-text p{
-  margin:20px 0 28px;
-  max-width:520px;
-  opacity:.9;
-}
+    .hero-text h1 {
+      font-size: 3.5rem;
+    }
 
-.socials{
-  display:flex;
-  gap:22px;
-  font-size:2.3rem;
-}
-.socials a{
-  color:white;
-  transition:.3s;
-}
-.socials a:hover{
-  transform:translateY(-6px) scale(1.1);
-  color:var(--c3);
-}
+    .hero-text span {
+      color: var(--teal);
+    }
 
-.hero-image{
-  height:100%;
-  display:flex;
-  align-items:flex-end;
-  justify-content:flex-end;
-}
-.hero-image img{
-  height:100%;
-  max-height:100vh;
-  object-fit:cover;
-}
+    .hero-text p {
+      margin: 18px 0 25px;
+      color: #cbd5f5;
+      max-width: 520px;
+    }
 
-/* ================= ABOUT ================= */
-#about{
-  background:var(--c4);
-}
-#about h2{color:var(--c1)}
-#about p{
-  max-width:900px;
-  font-size:1.05rem;
-  color:#033;
-}
+    .socials {
+      display: flex;
+      gap: 18px;
+      font-size: 2.2rem;
+    }
 
-/* ================= EDUCATION ================= */
-#education{
-  background:linear-gradient(180deg,var(--c2),var(--c1));
-  color:white;
-}
+    .socials a {
+      color: white;
+      transition: 0.3s;
+    }
 
-.edu-grid{
-  display:grid;
-  gap:20px;
-  max-width:900px;
-}
+    .socials a:hover {
+      color: var(--teal);
+      transform: translateY(-4px);
+    }
 
-.edu-item{
-  display:flex;
-  gap:20px;
-  align-items:center;
-  background:rgba(255,255,255,.12);
-  padding:18px 22px;
-  border-radius:18px;
-  backdrop-filter:blur(6px);
-  transition:.3s;
-}
-.edu-item:hover{
-  transform:translateX(10px);
-  background:rgba(255,255,255,.18);
-}
+    .hero-image img {
+      width: 100%;
+      max-height: 90vh;
+      object-fit: cover;
+    }
 
-.edu-item img{
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  background:white;
-  padding:6px;
-  object-fit:contain;
-}
+    /* ================= CONTENT BOX ================= */
+    .content-box {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      align-items: center;
+    }
 
-/* ================= HOBBIES ================= */
-#hobbies{
-  background:var(--c4);
-}
-.hobby-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:24px;
-}
+    .content-box p {
+      color: var(--gray);
+      max-width: 900px;
+    }
 
-.hobby{
-  background:white;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-  transition:.35s;
-}
-.hobby:hover{
-  transform:translateY(-12px);
-}
-.hobby img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-.hobby div{
-  padding:16px;
-  color:#044;
-}
+    .content-icon {
+      font-size: 4rem;
+      color: var(--teal);
+    }
 
-/* ================= GOALS ================= */
-#goals{
-  background:linear-gradient(135deg,var(--c3),var(--c2));
-  color:white;
-}
-#goals ul{
-  max-width:900px;
-  list-style:none;
-}
-#goals li{
-  margin-bottom:14px;
-  font-size:1.05rem;
-}
+    /* ================= EDUCATION ================= */
+    #education {
+      background: #f1f5f9;
+    }
 
-/* ================= GALLERY ================= */
-#gallery{
-  background:var(--c4);
-  padding:70px 4%;
-}
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
 
-.gallery-menu{
-  display:flex;
-  gap:16px;
-  justify-content:center;
-  margin-bottom:30px;
-}
-.gallery-menu button{
-  padding:12px 26px;
-  border:none;
-  border-radius:999px;
-  background:var(--c2);
-  color:white;
-  font-size:1rem;
-  cursor:pointer;
-  transition:.3s;
-}
-.gallery-menu button.active,
-.gallery-menu button:hover{
-  background:var(--c3);
-}
+    .edu-item {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: white;
+      padding: 18px 22px;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+    }
 
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:24px;
-}
+    .edu-item img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #e5e7eb;
+      padding: 5px;
+    }
 
-.gallery-item{
-  position:relative;
-  overflow:hidden;
-  border-radius:22px;
-  height:260px;
-  cursor:pointer;
-}
-.gallery-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.5s;
-}
-.gallery-item:hover img{
-  transform:scale(1.15);
-}
-.gallery-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.6),transparent);
-  opacity:0;
-  transition:.4s;
-}
-.gallery-item:hover .gallery-overlay{
-  opacity:1;
-}
+    /* ================= HOBBIES ================= */
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
 
-/* ================= FOOTER ================= */
-footer{
-  background:var(--c1);
-  color:#bfeeee;
-  text-align:center;
-  padding:40px 8%;
-}
+    .hobby {
+      border-radius: 18px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+      transition: transform 0.3s;
+    }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:900px){
-  header{
-    grid-template-columns:1fr;
-    padding-top:80px;
-  }
-  .hero-image{
-    justify-content:center;
-  }
-  .hero-image img{
-    max-height:70vh;
-  }
-}
-</style>
+    .hobby:hover {
+      transform: translateY(-8px);
+    }
+
+    .hobby img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .hobby div {
+      padding: 14px;
+    }
+
+    /* ================= GOALS ================= */
+    #goals {
+      background: linear-gradient(135deg, #14b8a6, #0d9488);
+      color: white;
+    }
+
+    .goals-box {
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .goals-box ul {
+      list-style: none;
+    }
+
+    .goals-box li {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    /* ================= GALLERY ================= */
+    .gallery-menu {
+      display: flex;
+      justify-content: center; /* ✅ CENTER MENU */
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .gallery-menu button {
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .gallery-menu button.active {
+      background: var(--teal);
+      color: white;
+    }
+
+    .gallery-section {
+      display: none;
+    }
+
+    .gallery-section.active {
+      display: block;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      padding: 40px 8%;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
   <div class="hero-text">
     <h1>Hi, I am <span>Josh</span></h1>
     <h3>Joshmar L. Clavero</h3>
-    <p>BSIT student driven by creativity, technology, and meaningful digital experiences.</p>
+    <p>A BSIT student passionate about technology, creativity, and building meaningful digital experiences.</p>
     <div class="socials">
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -272,84 +267,101 @@ footer{
 
 <section id="about">
   <h2>About Me</h2>
-  <p>
-    My interest in computers began at a young age, sparked by curiosity about how digital systems function behind the screen.
-    Over time, this curiosity grew into a fascination with programming and animation, where logic and creativity meet.
-    Alongside technical skills, I developed a strong foundation in graphic design, allowing me to visually express ideas with clarity and impact.
-    Today, I continuously refine my abilities in information technology while exploring the intersection of design, development, and innovation.
-  </p>
+  <div class="content-box">
+    <p>
+      My interest in computers started at a young age, driven by curiosity and fascination with how digital systems work.
+      Over time, this curiosity evolved into a genuine passion for programming and animation, where I enjoyed seeing ideas
+      transform into functional and visual outputs. Alongside this, I developed strong skills in graphic design, allowing
+      me to blend technical knowledge with creativity. Today, I continue to sharpen my abilities in IT while exploring
+      opportunities where design, technology, and innovation intersect.
+    </p>
+    <div class="content-icon"><i class="fa-solid fa-user"></i></div>
+  </div>
 </section>
 
 <section id="education">
   <h2>Education</h2>
-  <div class="edu-grid">
-    <div class="edu-item">
-      <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/2_JC_customize_my_website/HSLBCLOGO%20(1).png">
-      <div>2010–2017 • Elementary — HSL Braille College, Inc.</div>
+  <div class="content-box">
+    <div class="edu-list">
+      <div class="edu-item"><img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/2_JC_customize_my_website/HSLBCLOGO%20(1).png">2010–2017 • Elementary — HSL Braille College, Inc.</div>
+      <div class="edu-item"><img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/2_JC_customize_my_website/HSLBCLOGO%20(1).png">2018–2022 • Junior High — HSL Braille College, Inc.</div>
+      <div class="edu-item"><img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/2_JC_customize_my_website/HSLBCLOGO%20(1).png">2022–2024 • Senior High (STEM)</div>
+      <div class="edu-item"><img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/2_JC_customize_my_website/APC%20LOGO.png">2024–2028 • BSIT — Asia Pacific College</div>
     </div>
-    <div class="edu-item">
-      <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/2_JC_customize_my_website/HSLBCLOGO%20(1).png">
-      <div>2018–2022 • Junior High — HSL Braille College, Inc.</div>
-    </div>
-    <div class="edu-item">
-      <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/2_JC_customize_my_website/HSLBCLOGO%20(1).png">
-      <div>2022–2024 • Senior High (STEM)</div>
-    </div>
-    <div class="edu-item">
-      <img src="https://raw.githubusercontent.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/refs/heads/feature/2_JC_customize_my_website/APC%20LOGO.png">
-      <div>2024–2028 • BSIT — Asia Pacific College</div>
-    </div>
+    <div class="content-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+  </div>
+</section>
+
+<section id="hobbies">
+  <h2>Hobbies & Interests</h2>
+  <div class="hobby-grid">
+    <div class="hobby"><img src="https://img.freepik.com/free-photo/low-angle-view-unrecognizable-muscular-build-man-preparing-lifting-barbell-health-club_637285-2497.jpg"><div>Gym</div></div>
+    <div class="hobby"><img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/11/best-anime-series-ever-featured-image.jpg"><div>Anime</div></div>
+    <div class="hobby"><img src="https://imgcdn.oto.com/large/gallery/exterior/88/2748/kawasaki-ninja-zx-4rr-slant-rear-view-full-image-774960.jpg"><div>Motorcycle</div></div>
+    <div class="hobby"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"><div>Driving</div></div>
+    <div class="hobby"><img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66"><div>Movies</div></div>
+    <div class="hobby"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e"><div>Gaming</div></div>
+  </div>
+</section>
+
+<section id="goals">
+  <h2>Goals in Life</h2>
+  <div class="goals-box">
+    <ul>
+      <li><i class="fa-solid fa-bullseye"></i> Financial stability by 30: Build multiple sources of income through a stable career, smart investments, and continuous skill development, allowing me to live comfortably without constant financial stress or dependence on others.</li>
+      <li><i class="fa-solid fa-heart"></i> Retire parents early: Work hard and plan strategically so I can support my parents financially before they reach their 60s, giving them the freedom to rest, enjoy life, and no longer worry about work or expenses.</li>
+      <li><i class="fa-solid fa-network-wired"></i> Strong professional network: Develop meaningful professional relationships with people from technology, business, and creative fields to open opportunities, gain diverse perspectives, and grow both personally and professionally.</li>
+    </ul>
   </div>
 </section>
 
 <section id="gallery">
-  <h2 style="text-align:center">Picture Gallery</h2>
+  <h2>Picture Gallery</h2>
+
   <div class="gallery-menu">
-    <button class="active" onclick="loadGallery('me')">Me</button>
-    <button onclick="loadGallery('family')">Family & Friends</button>
-    <button onclick="loadGallery('others')">Others</button>
+    <button class="active" onclick="showGallery('me', this)">Me</button>
+    <button onclick="showGallery('family', this)">Family & Friends</button>
+    <button onclick="showGallery('others', this)">Others</button>
   </div>
-  <div class="gallery-grid" id="galleryGrid"></div>
+
+  <div id="me" class="gallery-section active">
+    <div class="gallery-grid">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/ME1.jpg?raw=true">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/ME2.jpg?raw=true">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/ME3.jpg?raw=true">
+    </div>
+  </div>
+
+  <div id="family" class="gallery-section">
+    <div class="gallery-grid">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/FNF1.jpg?raw=true">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/FNF2.jpg?raw=true">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/FNF3.jpg?raw=true">
+    </div>
+  </div>
+
+  <div id="others" class="gallery-section">
+    <div class="gallery-grid">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/O2.jpg?raw=true">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/O1.jpg?raw=true">
+      <img src="https://github.com/ushmaryosep/WEBPROG-IT242-HTML-Lessons/blob/feature/2_JC_customize_my_website/O3.png?raw=true">
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2026 Joshmar L. Clavero • HTML • CSS • Creativity
+  © 2026 Joshmar L. Clavero <br><br>
+  <strong>Resources Used:</strong> Canva (Images and Editing), HTML, CSS, TemplateMo (References and Inspiration), ChatGPT (AI Assistance)
 </footer>
 
 <script>
-const data={
-  me:[
-    "https://images.unsplash.com/photo-1527980965255-d3b416303d12",
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
-  ],
-  family:[
-    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac",
-    "https://images.unsplash.com/photo-1511895426328-dc8714191300",
-    "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91"
-  ],
-  others:[
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
-  ]
-};
+  function showGallery(id, btn) {
+    document.querySelectorAll('.gallery-section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
 
-function loadGallery(type){
-  document.querySelectorAll(".gallery-menu button").forEach(b=>b.classList.remove("active"));
-  event.target.classList.add("active");
-  const grid=document.getElementById("galleryGrid");
-  grid.innerHTML="";
-  data[type].forEach(src=>{
-    const d=document.createElement("div");
-    d.className="gallery-item";
-    d.innerHTML=``
-    +`<img src="${src}">`
-    +`<div class="gallery-overlay"></div>`;
-    grid.appendChild(d);
-  });
-}
-loadGallery("me");
+    document.querySelectorAll('.gallery-menu button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
 </script>
 
 </body>
