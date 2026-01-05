@@ -3,263 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Josh | First Portfolio Style</title>
+<title>Josh | Personal Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
 :root {
-  --teal: #14b8a6;
-  --dark: #0f172a;
-  --gray: #6b7280;
-  --light: #f8fafc;
+  --teal:#14b8a6;
+  --dark:#0f172a;
+  --gray:#6b7280;
+  --light:#f8fafc;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:var(--dark);}
+
+/* NAV */
+header{
+  position:fixed;top:0;width:100%;background:white;
+  border-bottom:1px solid #eee;z-index:1000;
+}
+.nav{
+  max-width:1200px;margin:auto;padding:16px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo{font-weight:700;font-size:1.2rem;}
+.logo span{color:var(--teal);}
+nav ul{display:flex;gap:22px;list-style:none;}
+nav a{color:var(--gray);font-size:.95rem;}
+nav a:hover{color:var(--dark);}
+
+/* HERO */
+.hero{
+  padding-top:140px;padding-bottom:100px;
+  background:linear-gradient(120deg,#ecfeff,white);
+}
+.hero-inner{
+  max-width:1200px;margin:auto;padding:0 20px;
+  display:grid;grid-template-columns:1.2fr 1fr;
+  gap:60px;align-items:center;
+}
+.hero h1{font-size:clamp(2.6rem,5vw,3.8rem);}
+.hero h1 span{color:var(--teal);}
+.hero p{color:var(--gray);margin:20px 0;max-width:520px;}
+.hero-btn{
+  display:inline-block;background:var(--teal);color:white;
+  padding:14px 32px;border-radius:999px;
+  transition:.3s;
+}
+.hero-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 35px rgba(20,184,166,.4);
+}
+.profile-card{
+  background:white;padding:30px;border-radius:24px;
+  box-shadow:0 35px 70px rgba(0,0,0,.15);
+  text-align:center;animation:float 4s ease-in-out infinite;
+}
+.profile-card img{
+  width:100%;border-radius:18px;margin-bottom:16px;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-14px);}
 }
 
-html { scroll-behavior: smooth; }
+/* GENERAL SECTION */
+section{padding:100px 20px;}
+.container{max-width:1200px;margin:auto;}
+.section-title{text-align:center;margin-bottom:60px;}
+.section-title h2{font-size:2.2rem;}
+.section-title p{color:var(--gray);margin-top:8px;}
 
-body {
-  background: white;
-  color: var(--dark);
+/* ABOUT */
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;
+  align-items:center;
+}
+.about-grid img{
+  width:100%;border-radius:22px;
+  transition:.6s;
+}
+.about-grid img:hover{transform:scale(1.05);}
+.about-text p{color:var(--gray);margin-bottom:14px;}
+
+/* EDUCATION */
+.timeline{
+  border-left:3px solid var(--teal);
+  padding-left:30px;
+}
+.timeline-item{
+  margin-bottom:40px;position:relative;
+}
+.timeline-item::before{
+  content:"";position:absolute;left:-13px;top:4px;
+  width:18px;height:18px;background:var(--teal);
+  border-radius:50%;
+}
+.timeline-item h3{margin-bottom:6px;}
+.timeline-item span{font-size:.9rem;color:var(--gray);}
+
+/* HOBBIES */
+.hobbies{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+.hobby{
+  background:white;padding:30px;border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+  text-align:center;transition:.4s;
+}
+.hobby:hover{
+  background:var(--teal);color:white;
+  transform:translateY(-12px);
+}
+.hobby i{color:var(--teal);margin-bottom:14px;}
+.hobby:hover i{color:white;}
+
+/* GOALS */
+.goals{
+  background:var(--dark);color:white;
+}
+.goal-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.goal{
+  background:#020617;padding:30px;border-radius:20px;
+}
+.goal h3{color:var(--teal);margin-bottom:10px;}
+
+/* GALLERY */
+.gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+.gallery img{
+  width:100%;border-radius:22px;
+  transition:.6s;
+}
+.gallery img:hover{
+  transform:scale(1.1);
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
 }
 
-/* ---------- NAV ---------- */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: white;
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
+/* FOOTER */
+footer{
+  background:#020617;color:white;padding:60px 20px;
+  text-align:center;
 }
 
-.nav {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.logo span { color: var(--teal); }
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 22px;
-}
-
-nav a {
-  color: var(--gray);
-  font-size: 0.95rem;
-}
-
-nav a:hover { color: var(--dark); }
-
-/* ---------- HERO ---------- */
-.hero {
-  padding-top: 140px;
-  padding-bottom: 80px;
-  background: linear-gradient(120deg, #f0fdfa, white);
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
-  line-height: 1.2;
-}
-
-.hero h1 span {
-  color: var(--teal);
-}
-
-.hero p {
-  margin: 20px 0;
-  color: var(--gray);
-  max-width: 500px;
-}
-
-.hero-btn {
-  display: inline-block;
-  margin-top: 10px;
-  background: var(--teal);
-  color: white;
-  padding: 14px 30px;
-  border-radius: 999px;
-  transition: 0.3s;
-}
-
-.hero-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(20,184,166,0.4);
-}
-
-/* ---------- PROFILE CARD ---------- */
-.profile-card {
-  background: white;
-  padding: 30px;
-  border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-  text-align: center;
-  animation: float 4s ease-in-out infinite;
-}
-
-.profile-card img {
-  width: 100%;
-  border-radius: 18px;
-  margin-bottom: 16px;
-}
-
-.profile-card h3 { margin-bottom: 6px; }
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-/* ---------- STATS ---------- */
-.stats {
-  background: var(--dark);
-  color: white;
-  padding: 80px 20px;
-}
-
-.stats-grid {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 30px;
-  text-align: center;
-}
-
-.stat h2 {
-  font-size: 2.5rem;
-  color: var(--teal);
-}
-
-/* ---------- SECTIONS ---------- */
-section {
-  padding: 100px 20px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.section-title h2 {
-  font-size: 2.2rem;
-}
-
-/* ---------- SERVICES ---------- */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 30px;
-}
-
-.service {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  transition: 0.4s;
-}
-
-.service:hover {
-  background: var(--teal);
-  color: white;
-  transform: translateY(-12px);
-}
-
-.service i {
-  color: var(--teal);
-  margin-bottom: 16px;
-}
-
-.service:hover i { color: white; }
-
-/* ---------- PORTFOLIO ---------- */
-.portfolio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 24px;
-}
-
-.work {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-.work img {
-  width: 100%;
-  transition: 0.6s;
-}
-
-.work:hover img {
-  transform: scale(1.1);
-}
-
-.work-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(15,23,42,0.85);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: 0.4s;
-}
-
-.work:hover .work-overlay {
-  opacity: 1;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  background: var(--dark);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media(max-width: 900px){
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner,.about-grid{grid-template-columns:1fr;text-align:center;}
 }
 </style>
 </head>
@@ -271,131 +169,144 @@ footer {
     <div class="logo">Josh<span>.</span></div>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#goals">Goals</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <h1>Hello, I’m <span>Josh</span><br>IT Student & Aspiring Developer</h1>
+      <h1>Hello, I’m <span>Josh</span></h1>
       <p>
-        A first-year IT student passionate about technology, design,
-        and building creative digital experiences.
+        A first-year BS Information Technology student passionate about
+        technology, creativity, and continuous self-improvement.
       </p>
-      <a href="#" class="hero-btn">Explore My Profile</a>
+      <a href="#about" class="hero-btn">Know More About Me</a>
     </div>
-
     <div class="profile-card">
       <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
-      <h3>Josh</h3>
-      <p>BS Information Technology</p>
+      <h3>BS Information Technology</h3>
+      <p>Aspiring IT Professional</p>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="stats-grid">
-    <div class="stat">
-      <h2 data-count="10">0</h2>
-      <p>Projects</p>
-    </div>
-    <div class="stat">
-      <h2 data-count="5">0</h2>
-      <p>Technologies</p>
-    </div>
-    <div class="stat">
-      <h2 data-count="100">0</h2>
-      <p>Motivation %</p>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section>
+<section id="about">
   <div class="container">
     <div class="section-title">
-      <h2>What I Do</h2>
+      <h2>About Me</h2>
+      <p>Who I am and what drives me</p>
     </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am a motivated college student currently pursuing a Bachelor of
+          Science in Information Technology. I enjoy learning how technology
+          shapes the modern world and how it can be used to solve real-life problems.
+        </p>
+        <p>
+          I am particularly interested in web development, design, and
+          continuously improving my technical and creative skills.
+        </p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+    </div>
+  </div>
+</section>
 
-    <div class="services">
-      <div class="service">
+<section id="education">
+  <div class="container">
+    <div class="section-title">
+      <h2>Education & Achievements</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Bachelor of Science in Information Technology</h3>
+        <span>2024 – Present</span>
+        <p>Studying programming, databases, and system fundamentals.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Academic Projects</h3>
+        <span>College Level</span>
+        <p>Completed multiple academic projects involving HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hobbies">
+  <div class="container">
+    <div class="section-title">
+      <h2>Hobbies & Interests</h2>
+    </div>
+    <div class="hobbies">
+      <div class="hobby">
         <i data-lucide="code"></i>
-        <h3>Web Development</h3>
-        <p>HTML, CSS, JavaScript fundamentals</p>
+        <h3>Coding</h3>
+        <p>Building and experimenting with websites and apps.</p>
       </div>
-      <div class="service">
-        <i data-lucide="layout"></i>
-        <h3>UI Design</h3>
-        <p>Clean layouts and user-friendly designs</p>
+      <div class="hobby">
+        <i data-lucide="palette"></i>
+        <h3>Design</h3>
+        <p>Exploring UI/UX and visual creativity.</p>
       </div>
-      <div class="service">
-        <i data-lucide="cpu"></i>
-        <h3>IT Fundamentals</h3>
-        <p>Problem solving and technical skills</p>
+      <div class="hobby">
+        <i data-lucide="gamepad-2"></i>
+        <h3>Games & Media</h3>
+        <p>Enjoying games and digital content for inspiration.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section>
+<section id="gallery">
   <div class="container">
     <div class="section-title">
-      <h2>My Gallery</h2>
+      <h2>Picture Gallery</h2>
     </div>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    </div>
+  </div>
+</section>
 
-    <div class="portfolio">
-      <div class="work">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-        <div class="work-overlay">
-          <h3>Project One</h3>
-        </div>
+<section id="goals" class="goals">
+  <div class="container">
+    <div class="section-title">
+      <h2>Goals in Life</h2>
+      <p>What I aim to achieve</p>
+    </div>
+    <div class="goal-grid">
+      <div class="goal">
+        <h3>Career Growth</h3>
+        <p>To become a skilled IT professional contributing to meaningful projects.</p>
       </div>
-      <div class="work">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-        <div class="work-overlay">
-          <h3>Project Two</h3>
-        </div>
+      <div class="goal">
+        <h3>Continuous Learning</h3>
+        <p>To constantly learn new technologies and improve my skills.</p>
       </div>
-      <div class="work">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-        <div class="work-overlay">
-          <h3>Project Three</h3>
-        </div>
+      <div class="goal">
+        <h3>Personal Development</h3>
+        <p>To grow as a responsible and creative individual.</p>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Josh • HTML, CSS & JavaScript Portfolio</p>
+  <p>© 2026 Josh • HTML, CSS & JavaScript Personal Portfolio</p>
 </footer>
 
 <script>
 lucide.createIcons();
-
-// Counter animation
-const counters = document.querySelectorAll("[data-count]");
-counters.forEach(counter => {
-  let start = 0;
-  const end = +counter.dataset.count;
-  const speed = 40;
-
-  const update = () => {
-    start++;
-    counter.textContent = start;
-    if (start < end) setTimeout(update, speed);
-  };
-  update();
-});
 </script>
 
 </body>
